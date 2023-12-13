@@ -1,5 +1,4 @@
 #include "shell.h"
-#include <string.h>
 
 /**
  * _strtok - splits a given string into tokens
@@ -25,8 +24,8 @@ char **_strtok(char *str)
 	token = strtok(str, " ");
 	while (token != NULL)
 	{
-		tokens[j] = malloc(sizeof(char) * (strlen(token) + 1));
-		strcpy(tokens[j], token);
+		tokens[j] = malloc(sizeof(char) * (_strlen(token) + 1));
+		_strcpy(tokens[j], token);
 		j++;
 		token = strtok(NULL, " ");
 	}

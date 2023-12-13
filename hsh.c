@@ -44,6 +44,7 @@ int main(void)
 		_free(tok);
 
 	}
+	free(lineptr);
 
 
 	return (0);
