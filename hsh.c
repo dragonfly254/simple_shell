@@ -5,33 +5,18 @@
  *
  * Return: always 0
  */
-
 int main(void)
 {
 	char **tok;
-	char *lineptr = NULL;
-	size_t n = 0;
-	int charead;
-	int status, i = 0;
+	char *lineptr;
+	int status, __attribute__((unused)) i = 0;
 	pid_t ch_pid;
 
 	while (1)
 	{
 		write(1, "$ ", 2);
 		fflush(stdout);
-
-		if ((charead = getline(&lineptr, &n, stdin)) == -1)
-		{
-			perror("error in getline");
-			exit(EXIT_FAILURE);
-		}
-	
-		while (lineptr[i] != '\0')
-		{
-			if (lineptr[i] == '\n')
-				lineptr[i] = '\0';
-			i++;
-		}
+		lineptr = _getline();
 
 		tok = _strtok(lineptr);
 

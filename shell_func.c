@@ -37,7 +37,7 @@ char **_strtok(char *str)
 
 /**
  * _exec - executes a given command
- * @argv -  pointer to array containing command and arguments
+ * @argv: pointer to array containing command and arguments
  */
 void _exec(char **argv)
 {
@@ -66,4 +66,33 @@ void _free(char **ptr)
 		free(ptr[j]);
 	}
 	free(ptr);
+}
+
+/**
+ * _getline - gets the line from prompt.
+ *
+ * Return: pointer to line read from prompt.
+ */
+char *_getline(void)
+{
+	int charead;
+	char *lineptr = NULL;
+	size_t n = 0;
+	int i = 0;
+
+	charead = getline(&lineptr, &n, stdin);
+	if (charead == -1)
+	{
+		perror("error  in getline");
+		exit(EXIT_FAILURE);
+	}
+
+	while (lineptr[i] != '\0')
+	{
+		if (lineptr[i] == '\n')
+			lineptr[i] = '\0';
+		i++;
+	}
+
+	return (lineptr);
 }

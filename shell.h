@@ -12,5 +12,6 @@
 char **_strtok(char *);
 void _exec(char **argv);
 void _free(char **ptr);
+char *_getline(void);
 
 #endif /* SHELL_H */
