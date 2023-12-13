@@ -14,7 +14,7 @@ int main(void)
 
 	while (1)
 	{
-		write(1, "$ ", 2);
+		write(1, "#cisfun$ ", 9);
 		fflush(stdout);
 		lineptr = _getline();
 
