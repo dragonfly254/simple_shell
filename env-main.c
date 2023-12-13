@@ -8,8 +8,10 @@
  *
  * Return: Always 0.
  */
-int main(int __attribute__((unused)) ac, char __attribute__((unused)) **av, char **env)
+int main(int ac, char **av, char **env)
 {
+	(void)ac;
+	(void)av
 	unsigned int i;
 
 	i = 0;
