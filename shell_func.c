@@ -74,7 +74,7 @@ void _free(char **ptr)
  */
 char *_getline(void)
 {
-	int charead;
+	ssize_t charead;
 	char *lineptr = NULL;
 	size_t n = 0;
 	int i = 0;
@@ -82,7 +82,6 @@ char *_getline(void)
 	charead = getline(&lineptr, &n, stdin);
 	if (charead == -1)
 	{
-		perror("error  in getline");
 		exit(EXIT_FAILURE);
 	}
 
